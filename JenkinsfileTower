@@ -122,8 +122,8 @@ stage('Deploy') {
                 inventory: '2',
                 removeColor: false,
                 verbose: true,
-                credential: 'jenkins',  
                 limit: "${hostLimit}",
+                credential: '',  
                 extraVars: """---
 ARTIFACT_URL:  "${artifactUrl}"
 APP_NAME: "${pom.artifactId}" 
