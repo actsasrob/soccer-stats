@@ -59,8 +59,6 @@ if(FULL_BUILD) {
         }
     }
 }
-*/
-/*
 if(FULL_BUILD) {
     stage('Approval') {
         timeout(time:3, unit:'DAYS') {
@@ -68,7 +66,6 @@ if(FULL_BUILD) {
         }
     }
 }
-*/
 
 if(FULL_BUILD) {
     stage('Artifact Upload') {
