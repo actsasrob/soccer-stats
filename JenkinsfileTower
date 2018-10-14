@@ -127,7 +127,7 @@ stage('Deploy') {
                 credential: '',  
                 extraVars: """---
 ARTIFACT_URL:  "${artifactUrl}"
-APP_NAME: "${pom.artifactId}" 
+APP_NAME: "hardcoded_in_jenkins_tower_file" 
 """
         )
     }
