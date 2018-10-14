@@ -120,7 +120,7 @@ stage('Deploy') {
                 jobTemplate: '7',
                 importTowerLogs: true,
                 inventory: '2',
-                removeColor: false,
+                removeColor: true,
                 verbose: true,
                 limit: "${hostLimit}",
                 credential: '',  
