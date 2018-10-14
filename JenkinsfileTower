@@ -110,8 +110,8 @@ stage('Deploy') {
             version = sh script: 'xmllint metadata.xml --xpath "string(//latest)"',
                          returnStdout: true
         }
-        //def artifactUrl = "http://${NEXUS_URL}/repository/${NEXUS_REPO}/${repoPath}/${version}/${pom.artifactId}-${version}.war"
-        def artifactUrl = "http://nexus.local:8081/repository/maven-releases/br/com/meetup/ansible/soccer-stats/0.0.2-18/soccer-stats-0.0.2-18.war"
+        def artifactUrl = "http://${NEXUS_URL}/repository/${NEXUS_REPO}/${repoPath}/${version}/${pom.artifactId}-${version}.war"
+        //def artifactUrl = "http://nexus.local:8081/repository/maven-releases/br/com/meetup/ansible/soccer-stats/0.0.2-18/soccer-stats-0.0.2-18.war"
         def hostLimit = (HOST_PROVISION == "all" || HOST_PROVISION == null) ? "" : HOST_PROVISION
         
         //you must specify your own ids
@@ -127,7 +127,7 @@ stage('Deploy') {
                 credential: '',  
                 extraVars: '''---
 ARTIFACT_URL:  "${artifactUrl}"
-APP_NAME: "hardcoded_in_jenkins_tower_file"''' 
+APP_NAME: "${pom.artifactId}"'''
         )
     }
 }
