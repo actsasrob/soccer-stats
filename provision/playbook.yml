@@ -19,9 +19,9 @@
   hosts: app_server
   tasks:
     - debug:
-        msg: 'ARTIFACT_URL={{ ARTIFACT_URL }}'
-    - debug:
         msg: 'APP_NAME={{ APP_NAME }}'
+    - debug:
+        msg: 'ARTIFACT_URL={{ ARTIFACT_URL }}'
     - get_url:
         force: yes
         url: "{{ ARTIFACT_URL }}"
