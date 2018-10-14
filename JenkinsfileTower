@@ -125,10 +125,9 @@ stage('Deploy') {
                 verbose: true,
                 limit: "${hostLimit}",
                 credential: '',  
-                extraVars: """---
+                extraVars: '''---
 ARTIFACT_URL:  "${artifactUrl}"
-APP_NAME: "hardcoded_in_jenkins_tower_file" 
-"""
+APP_NAME: "hardcoded_in_jenkins_tower_file"''' 
         )
     }
 }
